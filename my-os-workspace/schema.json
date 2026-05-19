@@ -1,0 +1,41 @@
+{
+  "name": "ECommerceExtension",
+  "description": "Handles payment processing and inventory",
+  "version": "1.0.0",
+  "entities": [
+    {
+      "name": "Order",
+      "attributes": [
+        {
+          "name": "Id",
+          "type": "LongInteger"
+        },
+        {
+          "name": "TotalAmount",
+          "type": "Decimal"
+        },
+        {
+          "name": "Status",
+          "type": "Text"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "ProcessPayment",
+      "inputs": [
+        {
+          "name": "OrderId",
+          "type": "LongInteger"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Success",
+          "type": "Boolean"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+# os-agent configuration
+# Maps local C# files to OutSystems Extension IDs.
+
+# Authentication mode for the REST API
+# Use "basic" for Personal Environments (username:password in .env)
+# Use "bearer" for Enterprise Environments (Service Account token in .env)
+auth_mode: "basic"
+
+# The REST endpoint path to sync schema.json to
+sync_endpoint: "/AgentLink/rest/SyncEngine/SyncData"
+
+# The command to run when a .cs file changes.
+# This is passed to os/exec, so use the full path or ensure it's on your PATH.
+# Examples:
+#   build_command: "dotnet build"
+#   build_command: "msbuild /p:Configuration=Release"
+#   build_command: "IntegrationStudio.exe /publish"
+build_command: "dotnet build"
+
+# Extension mappings: link local .cs files to OutSystems extension IDs.
+extensions:
+  # - file: "logic/MyExtension.cs"
+  #   extension_id: "ext-abc-123"
+  # - file: "logic/AnotherExt.cs"
+  #   extension_id: "ext-def-456"

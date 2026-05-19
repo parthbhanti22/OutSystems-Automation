@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>OutSystems Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">OS Studio</div>
+            <p class="subtitle">Intelligent Architecture Scaffolding</p>
+        </header>
+
+        <main class="content-grid">
+            <!-- Mermaid Input Panel -->
+            <div class="panel glass-panel">
+                <div class="panel-header">
+                    <h2>Mermaid Architecture</h2>
+                    <span class="badge">Code</span>
+                </div>
+                <div class="panel-body">
+                    <textarea id="mermaidInput" placeholder="Paste your Mermaid graph here...&#10;&#10;graph TD;&#10;    A-->B;"></textarea>
+                </div>
+            </div>
+
+            <!-- JSON Drop Panel -->
+            <div class="panel glass-panel">
+                <div class="panel-header">
+                    <h2>Schema Definition</h2>
+                    <span class="badge">JSON</span>
+                </div>
+                <div class="panel-body">
+                    <div id="dropZone" class="drop-zone">
+                        <div class="drop-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                        </div>
+                        <p>Drag & Drop your <strong>schema.json</strong> here</p>
+                        <p class="subtext">or click to browse</p>
+                        <input type="file" id="fileInput" accept=".json" hidden>
+                    </div>
+                    <div id="fileInfo" class="file-info hidden">
+                        <span id="fileName"></span>
+                        <button id="removeFileBtn" class="icon-btn">✕</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="action-footer">
+            <button id="generateBtn" class="primary-btn glow-effect">
+                <span class="btn-text">Generate Application</span>
+                <div class="spinner hidden"></div>
+            </button>
+            <div id="statusMessage" class="status-message"></div>
+        </footer>
+    </div>
+    <script src="./src/main.js" type="module"></script>
+</body>
+</html>

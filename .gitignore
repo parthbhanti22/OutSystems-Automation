@@ -1,0 +1,21 @@
+# Binary
+os-agent
+os-agent-*
+
+# Workspace secrets
+workspace/.env
+
+# OS / Editor
+.DS_Store
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.swp
+*~
+.idea/
+.vscode/
+
+# Test output
+test-workspace/
